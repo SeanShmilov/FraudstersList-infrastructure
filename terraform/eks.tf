@@ -15,7 +15,7 @@ module "eks" {
       instance_types = [var.node_instance_type]
       # Using higher max_size since we are on t3.micro to allow enough pod slots
       min_size       = 1
-      max_size       = 16
+      max_size       = 20
       desired_size   = var.desired_nodes
     }
   }

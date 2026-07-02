@@ -25,7 +25,7 @@ variable "node_instance_type" {
 variable "desired_nodes" {
   description = "Desired number of nodes in EKS"
   type        = number
-  default     = 8
+  default     = 16
 }
 
 variable "tfc_organization" {
