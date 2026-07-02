@@ -27,3 +27,8 @@ output "configure_kubectl" {
   description = "Command to configure kubectl"
   value       = "aws eks update-kubeconfig --name ${module.eks.cluster_name} --region ${var.region}"
 }
+
+output "github_actions_role_arn" {
+  description = "IAM Role ARN for GitHub Actions"
+  value       = aws_iam_role.github_actions.arn
+}
