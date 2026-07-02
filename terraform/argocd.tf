@@ -6,8 +6,10 @@ resource "helm_release" "argocd" {
   create_namespace = true
   version          = "7.7.11"
   timeout          = 600
+  wait             = false
+  atomic           = false
 
-  depends_on = [module.eks]
+  depends_on = [module.eks, helm_release.alb_controller]
 
   values = [
     <<-EOT
