@@ -17,7 +17,7 @@ resource "helm_release" "prometheus" {
     
     # 1. Disable High Availability and extra features
     defaultRules:
-      create: false # Disable default alerting rules to save memory
+      create: true # Required for Grafana dashboards (generates the CPU/Memory recording rules)
     alertmanager:
       enabled: false # Disable Alertmanager to save memory (not needed for basic metrics)
     kubeStateMetrics:
