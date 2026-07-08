@@ -89,5 +89,5 @@ resource "kubernetes_ingress_v1" "grafana" {
     }
   }
 
-  depends_on = [helm_release.prometheus]
+  depends_on = [helm_release.prometheus, helm_release.alb_controller]
 }
